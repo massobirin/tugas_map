@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Map dan Menentukan Lokasi</title>
+       
+    <link rel="stylesheet" href="leaflet.css">
+    <script src="leaflet.js"></script>
+    
+    <style>
+        #map { height: 100vh; }
+    </style>
+</head>
+<body>
+    
+    <div id="map"></div>
+    
+    <script>
+        var map = L.map('map').setView([-8.670321, 116.260074], 10);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var Bual = L.marker([-8.560359, 116.376868]).addTo(map);
+        var pasar = L.marker([-8.547747, 116.380211]).addTo(map);
+        var Mata = L.marker([-8.541610, 116.375677]).addTo(map);
+        var kantor = L.marker([-8.557347, 116.378283]).addTo(map);
+        var lapangan = L.marker([-8.547640, 116.379702]).addTo(map);
+        var Rumah = L.marker([-8.549619, 116.379914]).addTo(map);
+
+        
+        
+
+        
+
+        Bual.bindPopup("<b>WISATA</b><br>Embung Bual").openPopup();
+        pasar.bindPopup("<b>Pasar Tradisional</b><br>Talun Ambon").openPopup();
+        Mata.bindPopup("<b>WISATA</b><br>Mata Air Nyeredep/Pengembulan").openPopup();
+        kantor.bindPopup("<b>KANTOR DESA</b><br>AIK BUAL").openPopup();
+        lapangan.bindPopup("<b>LAPANGAN UMUM</b><br>AIK BUAL").openPopup();
+        Rumah.bindPopup("<b>Rumah saya</b><br>M. Assobirin").openPopup();
+        
+        map.addControl(new L.Control.Fullscreen());
+    </script>
+</body>
+</html>
