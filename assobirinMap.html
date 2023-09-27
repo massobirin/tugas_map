@@ -29,6 +29,16 @@
         var kantor = L.marker([-8.557347, 116.378283]).addTo(map);
         var lapangan = L.marker([-8.547640, 116.379702]).addTo(map);
         var Rumah = L.marker([-8.549619, 116.379914]).addTo(map);
+        var batas = L.polygon([
+    [-8.536221074700563, 116.37927037095261],
+    [-8.55072328736567, 116.38070811048755],
+    [-8.566646649851535, 116.38013301467493],
+    [-8.564940607163393, 116.37265676909055],
+    [-8.55811635991546, 116.36920619420363],
+    [-8.545036210870634, 116.37251299513571],
+    [-8.537500703877157, 116.37596357002047],
+    [-8.535794530689117, 116.37941414490746]
+]).addTo(map);
 
         
         
@@ -41,6 +51,7 @@
         kantor.bindPopup("<b>KANTOR DESA</b><br>AIK BUAL").openPopup();
         lapangan.bindPopup("<b>LAPANGAN UMUM</b><br>AIK BUAL").openPopup();
         Rumah.bindPopup("<b>Rumah saya</b><br>M. Assobirin").openPopup();
+        batas.bindPopup("Batas Wilayah Desa Aik Bual");
         
         map.addControl(new L.Control.Fullscreen());
     </script>
